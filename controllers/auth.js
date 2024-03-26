@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler');
-const { User, validateUser } = require('../models/user.model');
+const { User, validateUser } = require('../models/user');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
 
@@ -55,3 +55,7 @@ const signIn = asyncHandler(async (req, res) => {
     token,
   });
 });
+
+// TODO signout process
+
+module.exports = { signUp, signIn };
