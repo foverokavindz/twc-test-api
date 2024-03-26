@@ -14,12 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 // get json as a input our backend
 app.use(express.json());
 
-const db = require('./config/db');
+const db = require('./config/db.js');
 
 require('dotenv').config();
 
-// router
-require('./start/allRoutes')(app);
+// Import and setup routes
+const setupRoutes = require('./routes/index.js');
+setupRoutes(app);
 
 // error handler
 

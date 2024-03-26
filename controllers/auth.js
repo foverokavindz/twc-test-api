@@ -15,11 +15,11 @@ const signUp = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   const salt = await bcrypt.genSalt(10);
-  const userPassword = await bcrypt.hash(password, salt);
+  const hashedPassword = await bcrypt.hash(password, salt);
 
   newUser = await User.create({
     email,
-    userPassword,
+    password: hashedPassword,
   });
 
   if (!newUser)
@@ -56,6 +56,6 @@ const signIn = asyncHandler(async (req, res) => {
   });
 });
 
-// TODO signout process
+// TODO signout process | cokkies
 
 module.exports = { signUp, signIn };

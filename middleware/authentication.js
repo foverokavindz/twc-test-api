@@ -17,8 +17,9 @@ const protect = function (req, res, next) {
 
     next();
   } catch (ex) {
-    res.status(400).send('invalid token');
+    // JWT verification errors
+    return res.status(401).send('Access denied. Invalid token');
   }
 };
 
-module.exports = protect;
+module.exports = { protect };

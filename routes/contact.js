@@ -9,6 +9,6 @@ const {
 } = require('../controllers/contact.js');
 
 router.route('/').get(protect, getContacts).post(protect, createContact);
-router.route('/:id').delete(protect, deleteContact).put(protect, updateContact);
+router.route('/:id').put(protect, updateContact).delete(protect, deleteContact);
 
 module.exports = router;
