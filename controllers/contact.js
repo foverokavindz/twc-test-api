@@ -64,7 +64,7 @@ const updateContact = asyncHandler(async (req, res) => {
     });
 
   if (contact.userId.toString() !== userId)
-    return res.status(401).json({
+    return res.status(400).json({
       success: false,
       message: 'Unauthorized',
     });
@@ -103,14 +103,14 @@ const deleteContact = asyncHandler(async (req, res) => {
     });
 
   if (contact.userId.toString() !== userId)
-    return res.status(401).json({
+    return res.status(400).json({
       success: false,
       message: 'Unauthorized',
     });
 
   await contact.deleteOne();
 
-  res.status(200).json({
+  res.status(201).json({
     success: true,
     message: 'Contact deleted successfully',
   });

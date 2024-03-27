@@ -51,7 +51,7 @@ const signIn = asyncHandler(async (req, res) => {
 
   const token = user.genAuthenticationTkn();
 
-  res.status(200).json({
+  res.status(201).json({
     success: true,
     message: 'User logged in successfully',
     token,
