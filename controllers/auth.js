@@ -22,6 +22,8 @@ const signUp = asyncHandler(async (req, res) => {
     password: hashedPassword,
   });
 
+  const { password: exceptPassword, ...rest } = newUser._doc;
+
   if (!newUser)
     return res.status(400).json({
       success: false,
@@ -31,7 +33,7 @@ const signUp = asyncHandler(async (req, res) => {
   res.status(201).json({
     success: true,
     message: 'User created successfully',
-    data: newUser,
+    data: { rest },
   });
 });
 
