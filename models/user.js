@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
 
+// Create user schema
 const userSchema = new mongoose.Schema(
   {
     email: {

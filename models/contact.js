@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
+// Create contact schema
 const contactSchema = new mongoose.Schema(
   {
     userId: {

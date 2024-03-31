@@ -4,14 +4,14 @@ const cors = require('cors');
 
 const app = express();
 
-// Middleware
-
+// enable cors
 app.use(
   cors({
     exposedHeaders: ['x-auth-token'],
   })
 );
 
+// parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
 // get json as a input our backend

@@ -1,5 +1,4 @@
 const errorMiddleware = (err, req, res, next) => {
-  // Handle the error here
   console.error(err);
 
   res.status(500).json({
