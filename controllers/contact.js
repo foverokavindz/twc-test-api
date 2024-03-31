@@ -34,7 +34,7 @@ const createContact = asyncHandler(async (req, res) => {
 
 const getContacts = asyncHandler(async (req, res) => {
   const userId = req.user._id;
-  console.log('userId  ', userId);
+  console.log('userId contacts ', userId);
 
   const contacts = await Contact.find({ userId });
 
